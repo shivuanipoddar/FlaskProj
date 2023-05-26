@@ -1,65 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="author" content="Yinka Enoch Adedokun">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-	<link href="static/style.css" rel="stylesheet" >
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-	<title>Login Page</title>
-</head>
-<body>
-<!--	<h1>Welcome {{ session['user'] }}!</h1>-->
-<!--	<a href="/logout" >Logout</a>-->
-
-<div class="nav-bar">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Home</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#about-sec">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#services">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#testi">Testimonials</a>
-        </li>
-          {% if session['user'] %}
-
-           <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                {{ session['user']}}
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Profile</a></li>
-                <li><a class="dropdown-item" href="/logout">Logout</a></li>
-<!--                <li><hr class="dropdown-divider"></li>-->
-<!--                <li><a class="dropdown-item" href="#">Something else here</a></li>-->
-              </ul>
-            </li>
-          {% else %}
-           <li class="nav-item">
-              <a class="nav-link" href="/login">Login</a>
-           </li>
-          {% endif %}
-
-<!--        <li class="nav-item">-->
-<!--          <a class="nav-link" href="#featured">Featured</a>-->
-<!--        </li>-->
-      </ul>
-
-    </div>
-  </div>
-</nav>
-</div>
-
+{% extends "base.html" %}
+{% block content %}
 <div class="hero-container" id="about-sec">
   <div class="container-fluid ">
   <div class="row d-flex">
@@ -74,16 +14,17 @@
         <h4>Get all your needs Here</h4>
         <h6> Air Duct installation and cleaning Service in Tricity, Shimla, Baddi, Parmanu, Panipat etc.</h6>
         <p> Some tasks are only for experts because they only know how to handle it.
-          If you need trusted workers then believe me you are in right place. 
-          Our business is not just only a work it is our passion to rebuild the things in newer form.... 
+          If you need trusted workers then believe me you are in right place.
+          Our business is not just only a work it is our passion to rebuild the things in newer form....
           Our work make you think how hard work we do ... because we only choose the skilled worker to make things in Modernise form!!
           We provide services like Ducting, Aluminium Partition, Fall Ceiling, HVAC(Heating, ventilation, and air conditioning), Stainless Steelwork, Manufacturers - Food Cart, Rehri, Cooler Manufacturer, Cooler Ducting, Chimney Hood, Truck Peti, etc.......</p>
         </div>
         <div class="px-2 py-2">
-          <a role="button" class="btn btn-outline-primary" href="service">Checkout Our Services</a>
+          <a role="button" class="btn btn-outline-primary" href="/service">Checkout Our Services</a>
         </div>
       </div>
     </div>
+  </div>
 </div>
 </div>
 <!-- main container -->
@@ -97,7 +38,7 @@
 <div class="card-container bg-black" id="services">
   <div class="container-fluid px-3 py-3">
     <div class="row center mx-4 my-4 text-white">
-      <h2>Our Expertise In</h2>
+      <h2>We Expertise In</h2>
      <!-- <p>Highly professional team</p>-->
     </div>
     <div class="row mb-5">
@@ -107,7 +48,7 @@
   <div class="card-body">
     <h5 class="card-title"> Ducting</h5>
     <p class="card-text">Our ducting service offers top-quality solutions for efficient air distribution and ventilation systems. We specialize in designing, fabricating, and installing ductwork that meets the highest standards of performance and reliability. Whether you need ducting for residential, commercial, or industrial applications, our team of experienced professionals will ensure that your ventilation system operates smoothly and effectively. With our expertise in duct design and installation, we guarantee optimal airflow, energy efficiency, and a comfortable indoor environment. We care for your fresh air with no health issue.</p>
-    <a href="#" class="btn org-btn">Learn More.</a>
+<!--    <a href="#" class="btn org-btn">Learn More.</a>-->
   </div>
 </div>
       </div>
@@ -117,7 +58,7 @@
   <div class="card-body">
     <h5 class="card-title">Aluminium Partition</h5>
     <p class="card-text">Transform your workspace with our premium aluminium partition solutions. Our aluminium partitions provide a sleek, modern, and functional way to divide your office or commercial space. Designed to maximize natural light and enhance the aesthetics of your interior, our aluminium partitions offer a balance between privacy and open collaboration. With customizable options, you can create a layout that suits your specific requirements, creating a productive and stylish work environment. Our skilled team will guide you through the process, from design to installation, ensuring a seamless and efficient experience. </p>
-    <a href="#" class="btn org-btn">Go somewhere</a>
+<!--    <a href="#" class="btn org-btn">Go somewhere</a>-->
   </div>
 </div>
       </div>
@@ -127,7 +68,7 @@
   <div class="card-body">
     <h5 class="card-title">Fall Ceiling</h5>
     <p class="card-text">Elevate the ambiance of your space with our expertly crafted false ceiling solutions, also known as fall ceilings. A false ceiling not only adds visual appeal but also offers practical benefits, such as improved acoustics, thermal insulation, and concealed lighting options. Our team of professionals will work closely with you to understand your design preferences and functional requirements, tailoring a false ceiling solution that perfectly complements your space. From selecting the right materials to implementing intricate designs, we have the expertise to create stunning false ceilings that enhance the overall aesthetics of any residential or commercial setting.</p>
-    <a href="#" class="btn org-btn">Go somewhere</a>
+<!--    <a href="#" class="btn org-btn">Go somewhere</a>-->
   </div>
 </div>
       </div>
@@ -287,165 +228,61 @@
   </div> -->
 
 <!--  banner container  -->
-<div class="banner-container mt-5 mb-5" id="featured">
-  <div class="container-fluid px-4 py-4">
-  <div class="card bg-black text-white shadow-lg ">
-  <h5 class="card-header">Featured Courses</h5>
-  <div class="card-body">
-<!--     <h5 class="card-title">Special Teachers for Students</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn org-btn center">Learn More</a> -->
-    <div class="conatiner">
-    <div class="row d-flex justify-content-around">
-      <div class="col">
-         <div class="card text-black move-up mb-3" >
-  <div class="card-header">Web Development</div>
-  <div class="card-body">
-    <h5 class="card-title">Front End + Backend</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-<!--     <a href="#" class="btn btn-outline-primary center">View our curriculum</a> -->
-  </div>
-</div>
-      </div>
-      <div class="col">
-        <div class="card text-black move-up mb-3" >
-  <div class="card-header">Web3.0</div>
-  <div class="card-body">
-    <h5 class="card-title">Web3 and Tools</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
-      </div>
-      <div class="col">
-        <div class="card text-black move-up mb-3" >
-  <div class="card-header">Java Masterclass</div>
-  <div class="card-body">
-    <h5 class="card-title">Begineer Course</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
-      </div>
-        <div class="col">
-        <div class="card text-black move-up mb-3" >
-  <div class="card-header">Python </div>
-  <div class="card-body">
-    <h5 class="card-title">Python AI</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
-      </div>
+<!--<div class="banner-container mt-5 mb-5" id="featured">-->
+<!--  <div class="container-fluid px-4 py-4">-->
+<!--  <div class="card bg-black text-white shadow-lg ">-->
+<!--  <h5 class="card-header">Featured Courses</h5>-->
+<!--  <div class="card-body">-->
+<!--&lt;!&ndash;     <h5 class="card-title">Special Teachers for Students</h5>-->
+<!--    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>-->
+<!--    <a href="#" class="btn org-btn center">Learn More</a> &ndash;&gt;-->
+<!--    <div class="conatiner">-->
+<!--    <div class="row d-flex justify-content-around">-->
+<!--      <div class="col">-->
+<!--         <div class="card text-black move-up mb-3" >-->
+<!--  <div class="card-header">Web Development</div>-->
+<!--  <div class="card-body">-->
+<!--    <h5 class="card-title">Front End + Backend</h5>-->
+<!--    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--&lt;!&ndash;     <a href="#" class="btn btn-outline-primary center">View our curriculum</a> &ndash;&gt;-->
+<!--  </div>-->
+<!--</div>-->
+<!--      </div>-->
+<!--      <div class="col">-->
+<!--        <div class="card text-black move-up mb-3" >-->
+<!--  <div class="card-header">Web3.0</div>-->
+<!--  <div class="card-body">-->
+<!--    <h5 class="card-title">Web3 and Tools</h5>-->
+<!--    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--  </div>-->
+<!--</div>-->
+<!--      </div>-->
+<!--      <div class="col">-->
+<!--        <div class="card text-black move-up mb-3" >-->
+<!--  <div class="card-header">Java Masterclass</div>-->
+<!--  <div class="card-body">-->
+<!--    <h5 class="card-title">Begineer Course</h5>-->
+<!--    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--  </div>-->
+<!--</div>-->
+<!--      </div>-->
+<!--        <div class="col">-->
+<!--        <div class="card text-black move-up mb-3" >-->
+<!--  <div class="card-header">Python </div>-->
+<!--  <div class="card-body">-->
+<!--    <h5 class="card-title">Python AI</h5>-->
+<!--    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--  </div>-->
+<!--</div>-->
+<!--      </div>-->
 
 
 
-    </div>
-    </div>
-  </div>
-</div>
-</div>
-</div>
+<!--    </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
 
-<!-- footer -->
-<div class="footer-container foot">
-  <div class="container-fluid">
-	  <footer>
-		<div class="">
-		  <div class="row">
-		   <div class="col-md-4 footer-column">
-				<ul class="nav flex-column">
-				  <li class="nav-item">
-					<span class="footer-title">Product</span>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link" href="#services">Overview</a>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link" href="#">Pricing</a>
-				  </li>
-				  <!-- <li class="nav-item">
-					<a class="nav-link" href="#">Plans & Prices</a>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link" href="#">Frequently asked questions</a>
-				  </li>-->
-				</ul>
-			  </div>
-			  <div class="col-md-4 footer-column">
-				<ul class="nav flex-column">
-				  <li class="nav-item">
-					<span class="footer-title">Company</span>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link" href="#about-sec">About us</a>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link" href="#services">Services</a>
-				  </li>
-				 <!--  <li class="nav-item">
-					<a class="nav-link" href="#testi">Testimonals</a>
-				  </li>-->
-				</ul>
-			  </div>
-			  <div class="col-md-4 footer-column">
-				<ul class="nav flex-column">
-				  <li class="nav-item">
-					<span class="footer-title">Contact & Support</span>
-				  </li>
-				  <li class="nav-item">
-					<span class="nav-link"><i class="fas fa-phone"></i>9216952672</span>
-				  </li>
-				 <!--  <li class="nav-item">
-					<a class="nav-link" href="#"><i class="fas fa-comments"></i>Live chat</a>
-				  </li>-->
-				  <li class="nav-item">
-					<a class="nav-link" href="#"><i class="fas fa-envelope"></i>Contact us</a>
-				  </li>
-				  <!-- <li class="nav-item">
-					<a class="nav-link" href="#"><i class="fas fa-star"></i>Give feedback</a>
-				  </li>-->
-				</ul>
-			  </div>
-			</div>
-
-			<div class="text-center"><i class="fas fa-ellipsis-h"></i></div>
-
-			<div class="row text-center">
-			  <div class="col-md-4 box">
-				<span class="copyright quick-links">Copyright &copy; Your Website <script>document.write(new Date().getFullYear())</script>
-				</span>
-			  </div>
-			  <div class="col-md-4 box">
-				<ul class="list-inline social-buttons">
-				  <li class="list-inline-item">
-					<a href="#">
-					<i class="fab fa-twitter"></i>
-				  </a>
-				  </li>
-				  <li class="list-inline-item">
-					<a href="#">
-					<i class="fab fa-facebook-f"></i>
-				  </a>
-				  </li>
-				  <li class="list-inline-item">
-					<a href="#">
-					<i class="fab fa-linkedin-in"></i>
-				  </a>
-				  </li>
-				</ul>
-			  </div>
-			  <div class="col-md-4 box">
-				<ul class="list-inline quick-links">
-				  <li class="list-inline-item">
-					<a href="#">Privacy Policy</a>
-				  </li>
-				  <li class="list-inline-item">
-					<a href="#">Terms of Use</a>
-				  </li>
-				</ul>
-			  </div>
-			</div>
-		  </div>
-	  </footer>
-	</div>
-</div>
-</body>
-</html>
+{% endblock %}

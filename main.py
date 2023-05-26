@@ -13,6 +13,10 @@ db = mongodb_client.db
 def base():
     return render_template('index.html')
 
+@app.route('/home')
+def home():
+    return render_template('index.html')
+
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
@@ -22,13 +26,13 @@ def login():
         user = db.flask.find_one({'user': username, 'password': password})
         if user:
             session['user'] = username
-            return render_template('index.html')
+            return redirect('home')
         else:
             return render_template('login.html')
     else:
         try:
             if session['user']:
-                return render_template('index.html')
+                return redirect('home')
         except:
             pass
         return render_template('login.html')
@@ -53,6 +57,38 @@ def register():
 def logout():
     session.pop('user', default=None)
     return redirect('login')
+
+
+@app.route('/about-us')
+def about():
+    return render_template('about.html')
+
+
+@app.route('/service')
+def service():
+    service = db.services.find()
+    return render_template('service.html', services=service)
+
+
+@app.route('/contact-us')
+def contact():
+    return render_template('contact.html')
+
+
+@app.route('/product')
+def product():
+    return render_template('product.html')
+
+
+@app.route('/term')
+def term():
+    return render_template('terms.html')
+
+
+@app.route('/profile')
+def profile():
+    user = session['user']
+    return render_template('profile.html', user=user)
 
 
 # Press the green button in the gutter to run the script.

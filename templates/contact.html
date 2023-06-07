@@ -131,12 +131,14 @@ button.contact_form_submit {
                             <div class="col-md-10">
                                 <div class="contact_form_inner">
                                     <div class="contact_field">
+                                        <form action="/contact-us" method="post">
                                         <h3>Contatc Us</h3>
                                         <p>Feel Free to contact us any time. We will get back to you as soon as we can!.</p>
-                                        <input type="text" class="form-control form-group" placeholder="Name" />
-                                        <input type="text" class="form-control form-group" placeholder="Email" />
-                                        <textarea class="form-control form-group" placeholder="Message"></textarea>
+                                        <input type="text" class="form-control form-group" placeholder="Name" name="name" />
+                                        <input type="text" class="form-control form-group" placeholder="Email" name="email" />
+                                        <textarea class="form-control form-group" placeholder="Message" name="message"></textarea>
                                         <button class="contact_form_submit">Send</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>

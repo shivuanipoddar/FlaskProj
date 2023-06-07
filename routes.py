@@ -1,13 +1,8 @@
-from flask import Flask, render_template, request, redirect, session
-from flask_pymongo import PyMongo
+from flask import Blueprint
+from flask import render_template, request, redirect, session
+from . import db
 
-
-app = Flask(__name__)
-
-app.secret_key = 'Shivani_secret_key'
-mongodb_client = PyMongo(app, uri="mongodb://localhost:27017/flask_db")
-db = mongodb_client.db
-
+app = Blueprint('app', __name__)
 
 @app.route('/')
 def base():
@@ -70,14 +65,22 @@ def service():
     return render_template('service.html', services=service)
 
 
-@app.route('/contact-us')
+@app.route('/contact-us', methods=['POST', 'GET'])
 def contact():
-    return render_template('contact.html')
+    if request.method == 'POST':
+        username = request.form["name"]
+        email = request.form["email"]
+        message = request.form["message"]
+        db.contact.insert_one({'user_name': username, 'email': email, 'message': message})
+        return render_template('index.html')
+    else:
+        return render_template('contact.html')
 
 
 @app.route('/product')
 def product():
-    return render_template('product.html')
+    product = db.product.find()
+    return render_template('product.html', products=product)
 
 
 @app.route('/term')
@@ -92,6 +95,6 @@ def profile():
 
 
 # Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     app.run(debug=True)
 

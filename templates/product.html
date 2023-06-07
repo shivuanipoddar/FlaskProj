@@ -1,4 +1,48 @@
 {% extends "base.html" %}
 {% block content %}
+ <style>
+    .card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      border: none;
+    }
+
+    .card-body {
+      flex-grow: 1;
+    }
+
+    /* Add custom CSS to create equal-height columns */
+    .row-eq-height {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  </style>
+
+  <section class="service container py-8 px-6">
+    <div>
+      <h2 class="text-black font-weight-bold text-4xl text-uppercase text-center m-3">
+        Products <span class="text-danger">.</span>
+      </h2>
+      <div class="row row-eq-height ">
+        {% for product in products %}
+        <div class="col-lg-4 col-md-6 col-12 mb-4 ">
+          <div class="card">
+            <div class="bg-light p-5 transition-all rounded shadow-sm card-body m-3">
+              <div class="icon text-danger">
+                <i class="fa fa-flag fa-5x"></i>
+              </div>
+              <div class="desc">
+                <h3 class="font-weight-bold text-2xl">{{ product['name'] }}</h3>
+                <p class="font-weight-normal mt-3">{{ product['description'] }}</p>
+                <p class="font-weight-normal mt-3">{{ product['price'] }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
 
 {% endblock %}

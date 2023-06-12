@@ -10,6 +10,6 @@ db = mongodb_client.db
 
 
 def create_app():
-    from FlaskProj.main.routes import app
+    from .routes import app
     fapp.register_blueprint(app)
     return fapp

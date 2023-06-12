@@ -1,6 +1,6 @@
 from flask import Blueprint
 from flask import render_template, request, redirect, session
-from FlaskProj.main import db
+from . import db
 
 app = Blueprint('app', __name__)
 
